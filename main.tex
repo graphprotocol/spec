@@ -1,0 +1,53 @@
+\PassOptionsToPackage{table}{xcolor}% must be *before* \documentclass
+
+\documentclass[nohyper,nobib,12pt, letterpaper, symmetric]{tufte-book}
+
+
+
+\input{sources/header}
+\usepackage{emptypage}
+\doublespacing
+\begin{document}
+\input{sources/frontmatter/frontmatter}
+
+\pagestyle{mainmatter}
+\tableofcontents
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+% Lists of Figures and Tables
+%----------------------------------------------------------------
+%----------------------------------------------------------------
+%\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures  
+%\addcontentsline{toc}{chapter}{List of Tables} 
+\listoftables
+%-------------------------------------------
+%-------------------------------------------
+% Introduction
+%-------------------------------------------
+%-------------------------------------------
+\mainmatter
+\pagestyle{mainmatter}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{chapters/introduction}
+%-------------------------------------------
+%-------------------------------------------
+%-------------------------------------------
+%-------------------------------------------
+\part{Curation}
+\pagestyle{mainmatter} 
+%\addtocontents{toc}{\protect\newpage}
+\input{chapters/sample}
+%-------------------------------------------
+%-------------------------------------------
+%-------------------------------------------
+%-------------------------------------------
+\part*{Appendices}
+\newpage
+\addcontentsline{toc}{chapter}{Appendix Topic...}   
+\input{chapters/app-sample}
+\newpage
+\addcontentsline{toc}{chapter}{References}   
+\printbibliography[title=References]
+\end{document}
