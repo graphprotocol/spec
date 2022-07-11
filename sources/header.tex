@@ -131,6 +131,13 @@
     \begin{figure*}[t]
     \classiccaptionstyle
   }{\end{figure*}}
+  
+  
+\newenvironment{sidefigure}{%
+    \begin{marginfigure} 
+    \classiccaptionstyle
+    \singlespacing
+}{\end{marginfigure}}
 
 \usepackage{pgfplots}
 \usepackage{multirow}
@@ -421,6 +428,14 @@
     {\qquad\hfill \thecontentspage}% filler and page (leaders and page num)
     [\vspace*{0.0\baselineskip}]% after
 
+\titlecontents{subsection}%
+    [0.15\textwidth]% distance from left margin
+    {}% above (global formatting of entry)
+    {\thecontentslabel.\hspace{5pt}}% before w/ label (label = ``Chapter 1'')
+    {\hspace{0em}}% before w/o label
+    {\qquad\hfill \thecontentspage}% filler and page (leaders and page num)
+    [\vspace*{0.0\baselineskip}]% after
+
 
 % chapter format
 \titleformat{\part}%
@@ -521,3 +536,17 @@
 \definecolor{RED}{rgb}{0.8,0.05,0.05}
 \definecolor{GREEN}{rgb}{0.05,0.5,0.05}
 \definecolor{YELLOW}{rgb}{0.9, 0.7, 0.3}
+\definecolor{PURPLE}{HTML}{6f4cff}
+
+\hypersetup{hidelinks,
+backref=true,
+pagebackref=true,
+hyperindex=true,
+breaklinks=true,
+colorlinks=true,%linkcolor=black,
+urlcolor=PURPLE!70!black,
+linkcolor=PURPLE!70!black,
+bookmarks=true,
+bookmarksopen=false,
+pdftitle={Title},
+pdfauthor={Author}}

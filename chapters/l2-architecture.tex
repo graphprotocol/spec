@@ -1,0 +1,75 @@
+\chapter{Arbitrum Rewards}
+{\justifying
+
+\textit{You only find out who is swimming naked when the tide goes out.} 
+\newline \hspace*{10pt}\hfill -- Warren Buffett \textcolor{red}{[cite]}
+\vspace{0.25in}
+
+ 
+\section{Introduction}
+
+This chapter overviews deployment of The Graph Protocol to the Arbitrum One Layer 2 (L2) blockchain.\sidenote[][]{A more expanded version of this chapter is provided in \href{https://forum.thegraph.com/t/gip-0034-the-graph-arbitrum-devnet-with-a-new-rewards-issuance-and-distribution-mechanism/3418/2}{GIP-0034.}} We outline how the protocol coordinates between Ethereum mainnet (L1) together with the protocol on L2 (instead of fully migrating at once). The community will gradually move to L2 by starting with a ``devnet'' phase, in which indexing rewards are disabled, and then slowly increasing the amount of rewards in L2. To enable this, this GIP also proposes a change to how rewards are issued and distributed: instead of minting on the RewardsManager when allocations are closed, rewards would be pre-minted with a drip function in a new Reservoir contract. This function must be called at least once per week, and sends a configurable amount of the rewards to L2.
+
+With rising gas costs, there is a growing interest in the community for a Layer 2 scaling solution. As mentioned in GIP-0031, there have been forums discussions highlighting this need, and conversations among core dev team members pointing towards optimistic rollups, and particularly Arbitrum, as a reasonable first step in this direction. This is a big change, however, and not risk-free. So it would make sense to approach this with caution, and gradually mitigate risk along the way. For this reason, we’d like to explore an Arbitrum protocol implementation that works initially as a devnet, with no indexing rewards and therefore useful for experimental subgraphs. This would be a first step towards running the protocol with rewards on Arbitrum, assuming the devnet is a successful experiment. It would be beneficial, however, for the mechanism for rewards distribution to be implemented from the beginning, so that governance can gradually increase rewards in Arbitrum as the community gains confidence in the L2 network.
+
+
+\begin{subequations}
+\begin{align}
+    \rho & \equiv \mbox{rewards per signal} \\
+    R & \equiv \mbox{rewards} \\
+    p(t) & \equiv \mbox{total supply of GRT produced by accumulating rewards up to time $t$} \\
+    \sigma & \equiv \mbox{signal, \ie tokens on curation contract} \\
+    \omega & \equiv \mbox{allocated tokens, \ie tokens from indexer's stake that are allocated to a subgraph} \\
+    \gamma & \equiv \mbox{rewards per allocated token} \\
+    r & \equiv \mbox{issuance rate (including the $+1$)} \\
+    S & \equiv \mbox{set of all subgraphs} \\
+    A & \equiv \mbox{set of all allocations}
+\end{align}
+\end{subequations}
+
+
+\section{Reward Calculations}
+\begin{subequations}
+\begin{align}
+    \Delta R(t;\ t_0) & = p(t_0) r^{t-t_0} - p(t_0) \\
+    R(t) & = R(t_0) + \Delta R(t; t_0) \\
+    R_1(t) & = R_1(t_0) + (1-\lambda(t_0))\Delta R(t;t_0) \\
+    R_2(t) & = R_2(t_0) + \lambda(t_0) \Delta R(t;t_0) \\
+    R(t) & = R_1(t) + R_2(t).
+\end{align}
+\end{subequations}
+Then 
+\begin{equation}
+    p(t_0') = p(t_0) + \Delta R(t_0', t_0).
+\end{equation}
+
+\section{Drip Function}
+Test
+
+\section{Rewards Distribution}
+
+\begin{equation}
+    R_i(t) = R_i(t_0) + \Delta R_i(t;\ t_0).
+\end{equation}
+\begin{subequations}
+\begin{align}
+    \Delta R(t;\ t_0) & = p(t_0)r^{t-t_0} - p(t_0) \\
+    \Delta R_1(t;\ t_0) & = \left(1 - \lambda(t_0)\right) \Delta R(t;\ t_0) \\
+    \Delta R_2(t;\ t_0) & = \lambda(t_0) \Delta R(t;\ t_0).
+\end{align}
+Here $R_i$ is stored in the reservoir for each layer.
+
+\end{subequations}
+
+
+\section{Burning Denied/Unclaimed Rewards}
+
+\newpage
+\section{Keeper Reward for Drip Function}
+
+\newpage
+\section{Epoch Management}
+
+\newpage
+\section{Minting on L1 versus L1 $+$ L2}
+}
