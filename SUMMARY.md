@@ -1,20 +1,19 @@
 # Table of contents
 
 * [The Graph Protocol Economics](README.md)
-* [Page 1](page-1.md)
 
 ## Developers
 
-* [Page 5](developers/page-5.md)
+* [Economic Description](developers/economic-description.md)
 
 ## Curators
 
-* [Page 2](curators/page-2.md)
+* [Purpose of Curation](curators/purpose-of-curation.md)
 
 ## Indexers
 
-* [Page 3](indexers/page-3.md)
+* [Economic Description](indexers/economic-description.md)
 
 ## Delegators
 
-* [Page 4](delegators/page-4.md)
+* [Econ Description](delegators/econ-description.md)
