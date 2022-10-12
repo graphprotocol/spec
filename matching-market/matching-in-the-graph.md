@@ -4,8 +4,8 @@ Queries are served for subgraphs in The Graph by way of a matching market. The p
 
 Curation aims to tackle the signaling problem, which is discussed more here:
 
-{% content-ref url="../curators/purpose-of-curation.md" %}
-[purpose-of-curation.md](../curators/purpose-of-curation.md)
+{% content-ref url="curation-signaling.md" %}
+[curation-signaling.md](curation-signaling.md)
 {% endcontent-ref %}
 
 The problem solved by gateways is addressed here.

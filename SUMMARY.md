@@ -6,10 +6,7 @@
 
 * [Matching in The Graph](matching-market/matching-in-the-graph.md)
 * [Gateway Matching Problem](matching-market/gateway-matching-problem.md)
-
-## Curators
-
-* [Purpose of Curation](curators/purpose-of-curation.md)
+* [Curation Signaling](matching-market/curation-signaling.md)
 
 ## Developers
 
@@ -19,7 +16,3 @@
 ## Indexers
 
 * [Economic Description](indexers/economic-description.md)
-
-## Delegators
-
-* [Econ Description](delegators/econ-description.md)
