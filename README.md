@@ -1,5 +1,5 @@
 ---
-description: (Under Construction)
+description: Overview of economic mechanisms in The Graph
 ---
 
 # The Graph Protocol Economics
