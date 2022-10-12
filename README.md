@@ -1,6 +1,5 @@
 ---
 description: (Under Construction)
-layout: landing
 ---
 
 # The Graph Protocol Economics
