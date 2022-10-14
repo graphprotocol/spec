@@ -8,8 +8,4 @@ This document is an evolving specification overview of mechanisms in The Graph's
 
 __
 
-{% hint style="info" %}
-These docs are evolving documentation of the protocol. The ideas herein are intended to represent a "rough consensus" from discussions among contributors. Links will be provided to Notion pages and forum posts where further background can be found (_e.g._ iterations on ideas and trade offs).
-{% endhint %}
-
-__
+_This repo contains LaTex (.tex) and Markdown (.md) files for outlining the documentation, with the intention of making two mirrored methods for reading, a self-contained .pdf file and a Gitbook page._
