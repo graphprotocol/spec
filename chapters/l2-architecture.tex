@@ -24,7 +24,7 @@ Several variables are used to describe the relations for rewards herein.
     R & \equiv \mbox{rewards} \\
     p(t) & \equiv \mbox{total GRT supply produced by accumulating rewards up to time $t$} \\
     \sigma & \equiv \mbox{signal, \ie tokens on curation contract} \\
-    \omega & \equiv \mbox{allocated tokens, \ie tokens from indexer's stake that are allocated to a subgraph} \\
+    \omega & \equiv \mbox{tokens from indexer's stake that are allocated to a subgraph} \\
     \gamma & \equiv \mbox{rewards per allocated token} \\
     r & \equiv \mbox{issuance rate (including the $+1$)} \\
     S & \equiv \mbox{set of all subgraphs} \\
@@ -35,7 +35,7 @@ Several variables are used to describe the relations for rewards herein.
 
 \section*{Reward Calculations}
 
-Reward distribution follows the approach of Batog \textit{et\ al}. \cite{batog2018scalable}, but here distribution is done twice: first, treating each subgraph as a staker for the total rewards (computing rewards per signal), and secondly, treating each allocation as a staker for the subgraph’s rewards (computing rewards per allocated token). 
+Reward distribution follows the approach\sidenote[][]{\textcolor{red}{In that paper, the rewards were in discrete jumps whereas here they are continuously accruing. Need to bridge this gap formally.}} of Batog \textit{et\ al}. \cite{batog2018scalable}, but here distribution is done twice: first, treating each subgraph as a staker for the total rewards (computing rewards per signal), and, secondly, treating each allocation as a staker for the subgraph’s rewards (computing rewards per allocated token). 
 The global reward function $R$ is defined to encompass  the rewards functions $R_1$ and $R_2$ for L1 and L2, respectively. That is,
 \begin{equation}
     R(t) = R_1(t) + R_2(t),
@@ -43,31 +43,59 @@ The global reward function $R$ is defined to encompass  the rewards functions $R
 \end{equation}
 The evolution of rewards is captured via ``snapshotting'' of differences,\sidenote[][-1in]{Snapshotting is a key tool for executing efficient updates in Solidity. Rather than update continuously, we aim to update precisely when there are external changes to the system. This enables us to only keep track of a snapshot of the system at a previous time in order to update it to the present.} \ie 
 \begin{equation}
-    R(t) = R(t_0) + \Delta R(t; t_0),
+    R(t) = R(t_0) + \Delta R(t;\  t_0),
     \quad \mbox{for all times $t \geq t_0$,}
 \end{equation}
-where $\Delta R(t; t_0)$ is the change in rewards distributed between time $t_0$ and $t$.
-Rewards accrue continuously according to the issuance rate $r$, and so
+where $\Delta R(t;\ t_0)$ is the change in rewards distributed between time $t_0$ and a later time $t$.
+Rewards accrue continuously according to the issuance rate $r > 1$, and so
 \begin{equation}
-    \Delta R(t; t_0) = p(t_0) r^{t-t_0} - p(t_0).
-\end{equation}
-
+    \Delta R(t;\ t_0) = p(t_0) r^{t-t_0} - p(t_0),
+    \quad \mbox{for all $t_0 < t < t_1$.}
+\end{equation} 
 The proportion of updates to each chain are defined analogously via
 \begin{subequations}
 \begin{align} 
-    R_1(t) & = R_1(t_0) + (1-\lambda(t_0))\Delta R(t;t_0), \\
-    R_2(t) & = R_2(t_0) + \lambda(t_0) \Delta R(t;t_0)  
+    R_1(t) & = R_1(t_0) + (1-\lambda(t_0))\Delta R(t;\ t_0), \\
+    R_2(t) & = R_2(t_0) + \lambda(t_0) \Delta R(t;\ t_0),
 \end{align}
 \end{subequations}
- 
+where $\lambda(t_0) \in [0, 1]$ is the proportion of rewards to be distributed on L2 at time\sidenote[]{We emphasize this is only valid for $t \geq t_0$ sufficiently small to give $\lambda(t) = \lambda(t_0)$. However, changes to $\lambda$ occur rarely.} $t_0$.
+
+
+If $t_\sigma$ is the last time signal was updated on any subgraph, every time we want to calculate rewards, we should calculate the new value for accumulated rewards per signal as\sidenote[][]{We are interested in states of the system immediately before and after times $t$. To clarify matters around the (possible) jump discontinuities, we adopt the convention of superscript plus/minus signs for cases were we are interested in the limits as time approaches from the left for $t^-$ and from the right for $t^+$.}
+\begin{equation}
+    \rho(t)
+    = \rho(t_\sigma) \left[1 + \dfrac{r^{t-t_\sigma} - 1}{\sum_{i\in\mathcal{S}} \sigma_i(t_\sigma^+)} \right],
+    \ \ \ \mbox{for all $ t_\sigma < t < \hat{t}_{\sigma}$.}
+\end{equation}
+Note $\rho(t)$ is continuous since
+\begin{equation}
+    \rho(t_\sigma^+) = \rho(t_\sigma^-).
+\end{equation}
+And note time is discrete in our setting...
+
+
+Then \textcolor{red}{[clarify $+$ and $-$ superscripts]}
+\begin{equation}
+    \Delta p_i(t;\ t_\sigma)
+    = \rho_i(t) - \rho_i(t_\sigma).
+\end{equation}
+
 Then 
 \begin{equation}
-    p(t_0') = p(t_0) + \Delta R(t_0', t_0).
+    p(t_0') = p(t_0) + \Delta R(t_0';\  t_0).
 \end{equation}
 
 \section*{Drip Function}
-Test
+As we mentioned above, the new L1Reservoir contract will have a a drip() function. This function works as follows:
+The last time the function ran, it minted tokens for all rewards up to time  $t_1$. This was saved in contract storage, together with  (So during initialization these variables will have to be set to their appropriate values when an initialization function was called, and the appropriate amount of GRT will have to be minted as well).
 
+This drip would then be such that, if all rewards at any particular time up to $t_1$ are computed based on the stored values for, the tokens available on the Reservoir on each layer should be sufficient to cover these rewaards.
+
+
+$\sigma$ is to $\rho$ what $\omega$ is to $\gamma$...
+
+\newpage
 \section*{Rewards Distribution}
 
 \begin{equation}
