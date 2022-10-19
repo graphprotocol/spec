@@ -1,10 +1,14 @@
 # Market Desiderata
 
+### Introduction
+
+This pages discusses properties that help markets operate "successfully." First high-level properties are covered, which are then expanded upon in the context of The Graph.
+
+### Desiderata
+
 > Each of these ubiquitous marketplaces has found a way to succeed not only in making markets thick, uncongested, and safe, but also in making them _simple to use_.\
 > ****\
 > ****-Alvin Roth
-
-### Desiderata
 
 The core properties for a market are concisely summarized by Roth in the quote above. Below we overview relevant market properties and their interpretation in our context. In addition to Roth's list, note we strive for computationally efficiency in order to obtain practical gas costs in blockchain environments.
 
