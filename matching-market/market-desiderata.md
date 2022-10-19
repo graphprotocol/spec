@@ -1,6 +1,6 @@
 # Market Desiderata
 
-> Each of these ubiquitous marketplaces has found a way to succeed not only in making markets thick, uncongested, and safe, but also in making them simple to use.\
+> Each of these ubiquitous marketplaces has found a way to succeed not only in making markets thick, uncongested, and safe, but also in making them _simple to use_.\
 > ****\
 > ****-Alvin Roth
 
@@ -16,25 +16,25 @@ The core properties for a market are concisely summarized by Roth in the quote a
 {% hint style="info" %}
 **Simple**
 
-We consider simplicity along two dimensions: actions and their consequences are simple to understand (low cognitive overhead) and tasks are simple to perform (efficient workflows). As Roth concisely notes, "`being easy to describe isn't the same as being easy to navigate." In fact, markets may use complex algorithms` under the hood'' to execute transactions for simple strategies. This is the case for various matching markets (_e.g._ medical residencies).
-{% endhint %}
-
-{% hint style="info" %}
-**Uncongested**
-
-****
+We consider simplicity along two dimensions: actions and their consequences are simple to understand (low cognitive overhead) and tasks are simple to perform (efficient workflows). As Roth concisely notes, "being easy to describe isn't the same as being easy to navigate." In fact, markets may use complex algorithms "under the hood" to execute transactions for simple strategies. This is the case for various matching markets (_e.g._ medical residencies).
 {% endhint %}
 
 {% hint style="info" %}
 **Thick**
 
-****
+A market is _thick_ provided it brings together enough potential buyers and sellers to produce satisfactory outcomes for both sides of transactions. For example, a farmer may be unable to sell sufficient produce at the entrance to their farm (_e.g._ due to limited passersby). Thus, the farmer may find it favorable to instead sell their produce at a local farmers' market alongside other farmers and many interested consumers.
+{% endhint %}
+
+{% hint style="info" %}
+**Uncongested**
+
+Thick markets can tend toward congestion, which can make it impossible for participants to assess the most promising choices available. Formally, a market is _uncongested_ if it provides enough time (and makes transactions fast enough) for market participants to consider enough alternative possible transactions to arrive at satisfactory ones. In other words, uncongested markets provide participants ample time for due diligence.
 {% endhint %}
 
 {% hint style="info" %}
 **Tractable**
 
-****
+The Graph's permissionless markets are deployed on blockchains (_e.g._ Ethereum) in smart contracts. These contracts define computations and variables that must be updated to enable the market to operate. However, the execution of smart contracts is extremely expensive with respect to the computation and the mathematical operations available are often limited; for example, in Ethereum smart contract are written in the Solidity programming language, which uses unsigned integers. Thus, standard algorithms (_e.g._ sorting and matrix multiplication) can be prohibitively costly. For this reason, all aspects of the market must be with few variables and simple/cheap mathematical operations.
 {% endhint %}
 
 ### References
