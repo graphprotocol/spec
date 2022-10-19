@@ -37,5 +37,9 @@ Thick markets can tend toward congestion, which can make it impossible for parti
 The Graph's permissionless markets are deployed on blockchains (_e.g._ Ethereum) in smart contracts. These contracts define computations and variables that must be updated to enable the market to operate. However, the execution of smart contracts is extremely expensive with respect to the computation and the mathematical operations available are often limited; for example, in Ethereum smart contract are written in the Solidity programming language, which uses unsigned integers. Thus, standard algorithms (_e.g._ sorting and matrix multiplication) can be prohibitively costly. For this reason, all aspects of the market must be with few variables and simple/cheap mathematical operations.
 {% endhint %}
 
+### Concrete Properties in The Graph
+
+<mark style="color:red;">(Explain how the above properties are realized in The Graph.)</mark>
+
 ### References
 
