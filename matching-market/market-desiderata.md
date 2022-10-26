@@ -78,12 +78,14 @@ Safety is often an overloaded phrase when describing markets. For this reason, w
 * Folks are not worse off by participating truthfully (_e.g._ mitigate “rugpulling” and “free riding”)
 * Folks obtain the optimal outcomes by acting truthfully (_i.e._ not “gaming the system”)
 
-A classic result of Roth shows two-sided markets cannot simultaneously incentivize both sides of the market to participate truthfully. Yet, satisfactory results can (possibly) be achieved via iterative negotiations or use of concepts like stability, which we define as follows.
+A classic result of Roth shows two-sided markets cannot simultaneously incentivize both sides of the market to participate truthfully. Yet, satisfactory results can (possibly) be achieved via iterative negotiations or use of concepts like stability, which essentially means each pairing is the "best available match" as the pairs are the best preference for one another, given the option available.
+
+We define these concepts as follows.
 
 {% hint style="info" %}
 **Dominant Strategy Incentive Compatible (DSIC)**
 
-For all $$i$$, the $$i$$-th participant maximizes their utility $$u_i\colon\mathbb{R}^n\rightarrow\mathbb{R}$$​ by acting solely based off their private assessments $$v_i$$, _regardless_ of how other participants behave, _i.e._
+For all $$i$$, the $$i$$-th participant maximizes utility $$u_i\colon\mathbb{R}^n\rightarrow\mathbb{R}$$​ by acting solely based off their private assessment $$v_i$$, _regardless_ of how other participants behave, _i.e._
 
 $$u_i(x_i,\ x_{-i};\ v_i) \geq u_i(\xi,\ x_{-i};\ v_i),\quad \text{for all}\ x_{-i}\ \text{and}\ \xi.$$
 {% endhint %}
@@ -91,7 +93,7 @@ $$u_i(x_i,\ x_{-i};\ v_i) \geq u_i(\xi,\ x_{-i};\ v_i),\quad \text{for all}\ x_{
 {% hint style="info" %}
 **Individually Rational (IR)**
 
-For all $$i$$, the $$i$$-th participant achieves nonnegative utility when acting based on their private valuations, _regardless_ of how other participants behave, _i.e._
+For all $$i$$, the $$i$$-th participant achieves nonnegative utility when acting based on their private assessment $$v_i$$, _regardless_ of how other participants behave, _i.e._
 
 $$u_i(x_i,\ x_{-i};\ v_i) \geq 0,\quad \text{for all}\ x_{-i}.$$
 {% endhint %}
@@ -102,7 +104,11 @@ $$u_i(x_i,\ x_{-i};\ v_i) \geq 0,\quad \text{for all}\ x_{-i}.$$
 (insert defintion)
 {% endhint %}
 
+\
+Relevant results....&#x20;
 
+* stable matching —> "small" price of anarchy
+* stable matching —> \~DSIC as # participants increases
 
 
 
