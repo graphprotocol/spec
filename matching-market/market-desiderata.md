@@ -47,25 +47,24 @@ The above properties are helpful for general-purpose descriptions. This section 
 
 #### Simple
 
-* UX experience on the studio is clean and intuitive
-* Decision problems are aptly modeled via convex optimization / games
-* Indexing tools are standardized and accessible
-* Subgraphs are straightforward to create for dapps
+* Actions participants can take are as few as possible.
+* Decision problems are aptly modeled via convex optimization / games.
+* <mark style="color:blue;">UX experience on the studio is clean and intuitive.</mark>
+* <mark style="color:blue;">Indexing tools are standardized and accessible.</mark>
+* <mark style="color:blue;">Subgraphs are straightforward to create for dapps.</mark>
 
 #### Uncongested
 
 The properties are presently understood to contribute to whether the market is congested.
 
-* Possible to rank subgraphs in terms of expected indexer revenue per subgraph
-* Possible to deduce typical rates indexers are paid to serve queries/index subgraphs
-* <mark style="color:blue;">Possible to know if indexers are competing to index subgraph</mark>
-* <mark style="color:blue;">Gateways are able to quickly process and route queries between developers and indexers</mark>.
+* Possible to rank subgraphs in terms of expected indexer revenue per subgraph.
+* Possible to deduce typical rates indexers are paid to serve queries/index subgraphs.
+* <mark style="color:blue;">Possible to know if indexers are competing to index subgraph.</mark>
+* <mark style="color:blue;">Gateways can quickly process and route queries between developers and indexers.</mark>
 
 Ranking of subgraphs is important for indexers to be able to easily identify which subgraphs are valuable (_i.e._ "follow the money"). Using statistics (_e.g._ dashboard compiling usage data), developers should be able to easily estimate typical costs for subgraphs. The particular costs to index their subgraph are (often) unknown, but typical ranges can be known for attracting a particular number of indexers (corresponding to a desired quality of service).&#x20;
 
 We next consider factors that are external to the protocol. Indexers may not have time to make decisions about which subgraphs to allocate on if it is unclear whether other indexers have already started indexing efforts on the subgraph of interest. This matter is expected to be resolved by GraphCast, where indexers can broadcast their intent to index and sign communications with their ETH wallet. Lastly, the final item ought hold in order for indexers to be able to provide the quality of service (_e.g._ with respect to latency) desired by consumers.
-
-
 
 #### Thick
 
@@ -80,6 +79,22 @@ Safety is often an overloaded phrase when describing markets. For this reason, w
 * Folks obtain the optimal outcomes by acting truthfully (_i.e._ not “gaming the system”)
 
 A classic result of Roth shows two-sided markets cannot simultaneously incentivize both sides of the market to participate truthfully. Yet, satisfactory results can (possibly) be achieved via iterative negotiations or use of concepts like stability, which we define as follows.
+
+{% hint style="info" %}
+**Dominant Strategy Incentive Compatible (DSIC)**
+
+For all $$i$$, the $$i$$-th participant maximizes their utility $$u_i\colon\mathbb{R}^n\rightarrow\mathbb{R}$$​ by acting solely based off their private assessments $$v_i$$, _regardless_ of how other participants behave, _i.e._
+
+$$u_i(x_i,\ x_{-i};\ v_i) \geq u_i(\xi,\ x_{-i};\ v_i),\quad \text{for all}\ x_{-i}\ \text{and}\ \xi.$$
+{% endhint %}
+
+{% hint style="info" %}
+**Individually Rational (IR)**
+
+For all $$i$$, the $$i$$-th participant achieves nonnegative utility when acting based on their private valuations, _regardless_ of how other participants behave, _i.e._
+
+$$u_i(x_i,\ x_{-i};\ v_i) \geq 0,\quad \text{for all}\ x_{-i}.$$
+{% endhint %}
 
 {% hint style="info" %}
 **Stable**
