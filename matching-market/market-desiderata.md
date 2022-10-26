@@ -41,26 +41,36 @@ Thick markets can tend toward congestion, which can make it impossible for parti
 The Graph's permissionless markets are deployed on blockchains (_e.g._ Ethereum) in smart contracts. These contracts define computations and variables that must be updated to enable the market to operate. However, the execution of smart contracts is extremely expensive with respect to the computation and the mathematical operations available are often limited; for example, in Ethereum smart contract are written in the Solidity programming language, which uses unsigned integers. Thus, standard algorithms (_e.g._ sorting and matrix multiplication) can be prohibitively costly. For this reason, all aspects of the market must be with few variables and simple/cheap mathematical operations.
 {% endhint %}
 
-### Concrete Properties in The Graph
+### Implementation
 
-(Explain how the above properties are realized in The Graph.)
+The above properties are helpful for general-purpose descriptions. This section describes how each property is "measured" in The Graph. In each bulleted list, blue items are handled externally to the protocol (_i.e._ are not verifiable via on-chain transactions) whereas the other items are handled in the protocol (_i.e._ via smart contracts on Ethereum).
 
 #### Simple
 
-The tasks ought to aptly modeled by way of convex optimization. This can then be automated...
+* UX experience on the studio is clean and intuitive
+* Decision problems are aptly modeled via convex optimization / games
+* Indexing tools are standardized and accessible
+* Subgraphs are straightforward to create for dapps
 
 #### Uncongested
 
-* Rank
-* Rate
-* Allocate
+The properties are presently understood to contribute to whether the market is congested.
+
+* Possible to rank subgraphs in terms of expected indexer revenue per subgraph
+* Possible to deduce typical rates indexers are paid to serve queries/index subgraphs
+* <mark style="color:blue;">Possible to know if indexers are competing to index subgraph</mark>
+* <mark style="color:blue;">Gateways are able to quickly process and route queries between developers and indexers</mark>.
+
+Ranking of subgraphs is important for indexers to be able to easily identify which subgraphs are valuable (_i.e._ "follow the money"). Using statistics (_e.g._ dashboard compiling usage data), developers should be able to easily estimate typical costs for subgraphs. The particular costs to index their subgraph are (often) unknown, but typical ranges can be known for attracting a particular number of indexers (corresponding to a desired quality of service).&#x20;
+
+We next consider factors that are external to the protocol. Indexers may not have time to make decisions about which subgraphs to allocate on if it is unclear whether other indexers have already started indexing efforts on the subgraph of interest. This matter is expected to be resolved by GraphCast, where indexers can broadcast their intent to index and sign communications with their ETH wallet. Lastly, the final item ought hold in order for indexers to be able to provide the quality of service (_e.g._ with respect to latency) desired by consumers.
+
+
 
 #### Thick
 
 * permissionless - Anyone can participate on either side
-* Gateway matching and pricing experiences are satisfactory for both developers and indexers
-* Subgraphs are straightforward to create for dapps
-* Indexing tools are standardized and accessible
+* stable - Matching and pricing experiences are satisfactory for both developers and indexers
 
 #### Safe
 
