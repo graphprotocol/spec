@@ -43,7 +43,7 @@ The Graph's permissionless markets are deployed on blockchains (_e.g._ Ethereum)
 
 ### Implementation
 
-The above properties are helpful for general-purpose descriptions. This section describes how each property is "measured" in The Graph. In each bulleted list, blue items are handled externally to the protocol (_i.e._ are not verifiable via on-chain transactions) whereas the other items are handled in the protocol (_i.e._ via smart contracts on Ethereum).
+The above properties are helpful for general-purpose descriptions. This section describes how each property is "measured" in The Graph. In each bulleted list, <mark style="color:blue;">blue items</mark> are handled externally to the protocol (_i.e._ are not verifiable via on-chain transactions). We assume these hold, typically pointing to existing products aimed at addressing them for justification. The remaining items listed are handled in the protocol (_i.e._ via smart contracts on Ethereum).
 
 #### Simple
 
