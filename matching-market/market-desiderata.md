@@ -10,7 +10,7 @@ This pages discusses properties that help markets operate "successfully." First 
 > ****\
 > ****-Alvin Roth
 
-The core properties for a market are concisely summarized by Roth in the quote above. Below we these market properties and their interpretation. In addition to Roth's list, we strive for computationally efficiency as to obtain practical gas costs in blockchain environments.
+The essential properties of matching market are concisely summarized by Roth in the quote above. Below we these market properties and their interpretation. In addition to Roth's list, we strive for computationally efficiency as to obtain practical gas costs in blockchain environments.
 
 {% hint style="info" %}
 **Safe**\
