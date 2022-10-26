@@ -74,10 +74,18 @@ We next consider factors that are external to the protocol. Indexers may not hav
 
 #### Safe
 
-* Folks are not worse off by participating truthfully (_**e.g.**_ no surprise “rugpulling” and no benefits to “free riding”)
-* Folks obtain the optimal outcomes by acting truthfully (**i.e.** not “gaming the system”)
+Safety is often an overloaded phrase when describing markets. For this reason, we typically use the phrases individually rational and incentive compatible, which are respectively listed below.
 
+* Folks are not worse off by participating truthfully (_e.g._ mitigate “rugpulling” and “free riding”)
+* Folks obtain the optimal outcomes by acting truthfully (_i.e._ not “gaming the system”)
 
+A classic result of Roth shows two-sided markets cannot simultaneously incentivize both sides of the market to participate truthfully. Yet, satisfactory results can (possibly) be achieved via iterative negotiations or use of concepts like stability, which we define as follows.
+
+{% hint style="info" %}
+**Stable**
+
+(insert defintion)
+{% endhint %}
 
 
 
