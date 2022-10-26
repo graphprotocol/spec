@@ -43,7 +43,35 @@ The Graph's permissionless markets are deployed on blockchains (_e.g._ Ethereum)
 
 ### Concrete Properties in The Graph
 
-<mark style="color:red;">(Explain how the above properties are realized in The Graph.)</mark>
+(Explain how the above properties are realized in The Graph.)
+
+#### Simple
+
+The tasks ought to aptly modeled by way of convex optimization. This can then be automated...
+
+#### Uncongested
+
+* Rank
+* Rate
+* Allocate
+
+#### Thick
+
+* permissionless - Anyone can participate on either side
+* Gateway matching and pricing experiences are satisfactory for both developers and indexers
+* Subgraphs are straightforward to create for dapps
+* Indexing tools are standardized and accessible
+
+#### Safe
+
+* Folks are not worse off by participating truthfully (_**e.g.**_ no surprise “rugpulling” and no benefits to “free riding”)
+* Folks obtain the optimal outcomes by acting truthfully (**i.e.** not “gaming the system”)
+
+
+
+
+
+
 
 ### References
 
