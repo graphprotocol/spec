@@ -16,4 +16,5 @@
 
 ## Indexers
 
+* [Query Properties](indexers/query-properties.md)
 * [Description](indexers/description.md)
