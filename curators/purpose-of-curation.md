@@ -14,7 +14,7 @@ Curation signaling in The Graph is the identification of subgraph value. The Gra
 
 
 
-
+Today developers may have the best knowledge for subgraph value (e.g. some instances presently have curators asking developers about expected queries).
 
 
 

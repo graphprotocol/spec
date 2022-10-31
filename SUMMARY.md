@@ -8,7 +8,6 @@
 * [Gateway Matching Problem](matching-market/gateway-matching-problem.md)
 * [Curation Signaling](curators/purpose-of-curation.md)
 * [Market Desiderata](matching-market/market-desiderata.md)
-* [Indexing Rewards](matching-market/indexing-rewards.md)
 
 ## Developers
 
@@ -17,4 +16,5 @@
 ## Indexers
 
 * [Query Properties](indexers/query-properties.md)
-* [Description](indexers/description.md)
+* [Indexing Rewards](indexers/indexing-rewards.md)
+* [Quality of Service](indexers/quality-of-service.md)

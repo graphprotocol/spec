@@ -21,3 +21,13 @@ Indexing rewards form the majority of indexer income in The Graph today. This is
 
 
 
+#### Allocations
+
+The allocation process works to broadcast/advertise which subgraphs an indexer is indexing, so it helps to build a “state of the world” on-chain. But particularly is part of the game indexers play to compete for indexing rewards, they need to optimize what they stake into what subgraph using their available stake.&#x20;
+
+An allocation can last for more than 28 days, but after the 28 days anyone can close it. The motivation for this rule was to prevent indexers from withholding rewards for a long time rather than distributing them to delegators.&#x20;
+
+Getting rid of the allocation process if we ever find a better mechanism would hugely reduce on-chain traffic. We may always want a process by which indexers tell what they serve, but this may be moved off-chain by querying them about it through endpoints (_e.g._ via the GraphCast gossip network). As long as indexers must play the stake to subgraph allocation game for indexing rewards, this information will be on-chain because the on-chain protocol is the gatekeeper to distribute those rewards.
+
+
+
