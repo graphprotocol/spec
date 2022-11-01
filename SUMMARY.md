@@ -17,4 +17,5 @@
 
 * [Query Properties](indexers/query-properties.md)
 * [Indexing Rewards](indexers/indexing-rewards.md)
+* [Proof of Indexing](indexers/proof-of-indexing.md)
 * [Quality of Service](indexers/quality-of-service.md)
