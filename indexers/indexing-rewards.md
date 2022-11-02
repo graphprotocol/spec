@@ -31,3 +31,5 @@ Getting rid of the allocation process if we ever find a better mechanism would h
 
 
 
+(INSERT DETAILED VERSION OF DISTRIBUTION VIA SNAPSHOTTING LIKE [HERE](https://forum.thegraph.com/t/gip-0034-the-graph-arbitrum-deployment-with-a-new-rewards-issuance-and-distribution-mechanism/3418))
+
